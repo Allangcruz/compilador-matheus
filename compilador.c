@@ -73,6 +73,7 @@ typedef struct simbolo {
 } Simbolo;
 
 typedef struct elemSimbolo {
+    struct elemSimbolo *ant;
     Simbolo dados;
     struct elemSimbolo *prox;
 } ElemSimbolo;
@@ -620,6 +621,7 @@ int insereFinalTabelaSimbolo(TabelaSimbolo* lista, Simbolo simbolo) {
 
     // lista vazia: insere inicio
     if ((*lista) == NULL) {
+        no->ant = NULL;
         *lista = no;
     } else {
         ElemSimbolo *aux;
@@ -630,6 +632,7 @@ int insereFinalTabelaSimbolo(TabelaSimbolo* lista, Simbolo simbolo) {
         }
 
         aux->prox = no;
+        no->ant = aux;
     }
     return 1;
 }
