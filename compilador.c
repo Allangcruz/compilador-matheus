@@ -5,7 +5,7 @@
 /**
  * Constante que define o tanhamos das variaveis do tipo string.
  */
-int UCHAR_MAX = 500;
+int TOTAL_CARACTERES = 500;
 
 /**
  * Total de memoria consumida no compilador.
@@ -113,8 +113,8 @@ void removePalavrasComAspas(char *palavra, char *palavraComAspas) {
 
 	int i, valorAscii, countPalavra = 0, countPalavraValida = 0, isPossuiAspas = 0;
 
-	char palavraComConteudoAspas[UCHAR_MAX];
-	char palavraSemConteudoAspas[UCHAR_MAX];
+	char palavraComConteudoAspas[TOTAL_CARACTERES];
+	char palavraSemConteudoAspas[TOTAL_CARACTERES];
 
 	setMemoria(sizeof(i), 1);
 	setMemoria(sizeof(valorAscii), 1);
@@ -198,8 +198,8 @@ int isVerificaDeclaracaoVariavel(char *palavra, int nuLinha) {
 
 int isMainValido(char *palavra, int nuLinha) {
 	int i, ascii, count = 0, isInValido = 0;
-	char palavraTmp[UCHAR_MAX];	
-	char palavraProcessada[UCHAR_MAX];
+	char palavraTmp[TOTAL_CARACTERES];	
+	char palavraProcessada[TOTAL_CARACTERES];
 	limparArray(palavraTmp);
 	limparArray(palavraProcessada);
 	
@@ -248,7 +248,7 @@ int isMainValido(char *palavra, int nuLinha) {
 
 void removerCaracterEspaco(char *palavra) {
 	int i, ascii, count = 0;
-	char palavraTmp[UCHAR_MAX];
+	char palavraTmp[TOTAL_CARACTERES];
 	limparArray(palavraTmp);
 
 	for (i = 0; i < strlen(palavra); i++) {
@@ -268,7 +268,7 @@ void removerCaracterEspaco(char *palavra) {
 }
 
 int isVerificaFinalizacaoPontoVingula(char *palavra, int nuLinha) {
-	char palavraProcessada[UCHAR_MAX];
+	char palavraProcessada[TOTAL_CARACTERES];
 	limparArray(palavraProcessada);
 	
 	strcpy(palavraProcessada, palavra);
@@ -335,7 +335,7 @@ int isReservada(char *palavra) {
 void limparArray(char vetor[]) {
 	int i = 0;
 
-	while (i < UCHAR_MAX) {
+	while (i < TOTAL_CARACTERES) {
 		vetor[i] = '\0';
 		i ++;
 	}
@@ -343,7 +343,7 @@ void limparArray(char vetor[]) {
 
 void removerQuebraLinha(char* palavra) {
 	int i, valorAscii, count = 0;
-	char palavraAux[UCHAR_MAX];
+	char palavraAux[TOTAL_CARACTERES];
 	limparArray(palavraAux);
 
 	for (i = 0; i < strlen(palavra); i++) {
@@ -490,7 +490,7 @@ int isLinhaVazia(char *palavra) {
 
 void removerTabulacao(char* palavra) {
 	int i, valorAscii, count = 0;
-	char palavraAux[UCHAR_MAX];
+	char palavraAux[TOTAL_CARACTERES];
 	limparArray(palavraAux);
 
 	for (i = 0; i < strlen(palavra); i++) {
@@ -721,13 +721,13 @@ int main () {
 
 	// ---------------------------------------------------------------------
 	int i = 0;
-    char acumulador[UCHAR_MAX];
-    char conteudoLinha[UCHAR_MAX];
-	char nomeTipoVariavel[UCHAR_MAX];
-    char conteudoPorCaracter[UCHAR_MAX];
-	char conteudoLinhaComAspas[UCHAR_MAX];
-	char nomeFuncaoModulo[UCHAR_MAX];
-	char nomeVariavel[UCHAR_MAX];
+    char acumulador[TOTAL_CARACTERES];
+    char conteudoLinha[TOTAL_CARACTERES];
+	char nomeTipoVariavel[TOTAL_CARACTERES];
+    char conteudoPorCaracter[TOTAL_CARACTERES];
+	char conteudoLinhaComAspas[TOTAL_CARACTERES];
+	char nomeFuncaoModulo[TOTAL_CARACTERES];
+	char nomeVariavel[TOTAL_CARACTERES];
 
 	setMemoria(sizeof(acumulador), 1);
 	setMemoria(sizeof(conteudoLinha), 1);
